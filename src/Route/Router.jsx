@@ -6,6 +6,7 @@ import AddProduct from '../Pages/Add Product/AddProduct';
 import Login from '../Pages/Login/Login';
 import PrivateRoute from '../Components/Firebase/PrivateRoute';
 import Error from '../Components/Error/Error';
+import Register from '../Components/Register/Register';
 
 const Router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const Router = createBrowserRouter([
             {
                 path : "/login",
                 element: <Login></Login>
+            },
+            {
+                path : "/register",
+                element : <Register></Register>
             }
         ]
         
