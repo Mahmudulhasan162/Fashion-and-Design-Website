@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/Firebase/AuthProvider";
 import swal from "sweetalert";
 
@@ -34,11 +34,14 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <h3 className=" text-center uppercase block font-sans text-4xl font-bold leading-snug tracking-normal text-black antialiased">
+      Log In
+    </h3>
+            <div className="hero min-h-screen ">
+            
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <img className="w-[400px]" src="../../../Images/undraw_authentication_re_svpt.svg" alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form className="card-body">
@@ -53,9 +56,6 @@ const Login = () => {
             <span className="label-text">Password</span>
           </label>
           <input  onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="password" className="input input-bordered" required />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
         </div>
         <div className="form-control mt-6">
           <button onClick={handleLogin} className="btn btn-primary">Login</button>
@@ -63,6 +63,15 @@ const Login = () => {
         <div className="form-control mt-6">
           <button  onClick={handleGoogleLogIn} className="btn btn-primary">Sign In with Google</button>
         </div>
+        <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+      Don't have an account?
+      <Link
+        to="/register"
+        className="ml-1 block font-sans text-sm font-bold leading-normal text-[#1d1846] antialiased"
+      >
+        Register
+      </Link>
+    </p>
       </form>
     </div>
   </div>
