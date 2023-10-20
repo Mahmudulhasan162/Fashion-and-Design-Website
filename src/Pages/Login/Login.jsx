@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/Firebase/AuthProvider";
@@ -19,8 +20,9 @@ const Login = () => {
       console.log(result.user);
     })
   }
-  const handleLogin = () => {
-    if(email, password){
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if(email && password){
       Login(email, password).then(() => {
         swal("Logged In", "You have successfully logged in", "success");
 

@@ -7,18 +7,24 @@ const Register = () => {
     const {Register} = useContext(AuthContext);
     const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState("");
-    const [name, setName] = useState(null);
     const Location= useLocation();
     const Navigate = useNavigate();
 
-    const handleRegistration= ()  =>{
+    const handleRegistration= (e)  =>{
+        e.preventDefault();
         if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])(.{6,})$/.test(password)){
             swal("Passoword Not Correct!", "Minimum six characters, one special character and at least one capital letter needed!", "error");
         }else{
-            if(email && name){
-                Register(email, password, name).then(result=>console.log(result.user))
-                Navigate(Location?.state ? Location.state : "/");
+            if(email){
+                Register(email, password)
+                .then(result=>console.log(result.user))
+                .then(()=>{
+                    Navigate(Location?.state ? Location.state : "/");
                 swal("Welcome!", "You have registered successfully!", "success");
+                })
+                .catch((error)=>{
+                    console.error("Error : ", error);
+                })
             }
         }
     }
@@ -39,7 +45,7 @@ const Register = () => {
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input  onChange={(e)=>setName(e.target.value)} type="name" placeholder="name" className="input input-bordered" required />
+          <input  type="name" placeholder="name" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
