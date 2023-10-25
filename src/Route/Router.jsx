@@ -10,6 +10,7 @@ import Register from '../Components/Register/Register';
 import Brand from '../Components/Categories/Brand';
 import Itemdetails from '../Components/Details/Itemdetails';
 import Cart from '../Pages/Cart/Cart';
+import Update from '../Components/Update/Update';
 
 const Router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const Router = createBrowserRouter([
             {
                 path:"/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/brands")
+                loader: () => fetch("https://fashion-store-server-alpha.vercel.app/brands")
             },
             {
                 path : "/products",
@@ -37,17 +38,23 @@ const Router = createBrowserRouter([
             {
                 path: "/brand/:id",
                 element : <PrivateRoute><Brand></Brand></PrivateRoute>,
-                loader : ({ params }) => fetch(`http://localhost:5000/products?brandId=${params.id}`),
+                loader : ({ params }) => fetch(`https://fashion-store-server-alpha.vercel.app/products?brandId=${params.id}`),
             },
             {
                 path : "/brands/:id",
                 element : <PrivateRoute><Itemdetails></Itemdetails></PrivateRoute>,
-                loader : () => fetch('http://localhost:5000/products'),
+                loader : () => fetch('https://fashion-store-server-alpha.vercel.app/products'),
             },
             {
                 path : "/cart",
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-                loader : ()=> fetch('http://localhost:5000/cart'),
+                loader : ()=> fetch('https://fashion-store-server-alpha.vercel.app/cart'),
+            },
+            {
+                path : "/update/:id",
+                element : <PrivateRoute><Update></Update></PrivateRoute>,
+                loader : ({params}) => fetch(`https://fashion-store-server-alpha.vercel.app/products/${params.id}`)
+
             }
         ]
         

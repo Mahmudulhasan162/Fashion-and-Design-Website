@@ -23,7 +23,7 @@ const Itemdetails = () => {
 
         try {
             setLoading(true);
-            const response = await fetch("http://localhost:5000/cart", {
+            const response = await fetch("https://fashion-store-server-alpha.vercel.app/cart", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

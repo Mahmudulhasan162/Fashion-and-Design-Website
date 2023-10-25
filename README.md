@@ -1,8 +1,17 @@
-# React + Vite
+#Fashion Brands Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Website_Link : https://fashion-website-c2c40.web.app
 
-Currently, two official plugins are available:
+- All the data of this project is come from databases I have created in mongodb and I have implemented the back-end server for this project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- There are six brands whose products can be seen in this website and users can add a product to cart.
+
+- Users can see there cart products and they can delete products form their cart.
+
+- Users can add a new product by going to the Add product section 
+
+- Users can update a product as they want
+
+- Most of the routes can be visited if he/she is a registered and logged in user.
+
+- Users can login by their registered email and password and also they can sign in with google account.
