@@ -30,7 +30,7 @@ const Navbar = () => {
             Home
             </NavLink>
             <NavLink
-            to="/add"
+            to="/products"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "font-bold underline" : ""
             }
