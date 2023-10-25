@@ -37,7 +37,7 @@ const Register = () => {
             
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <img className="w-[400px]" src="../../../Images/undraw_sign_up_n6im.svg" alt="" />
+      <img className="w-[400px]" src="https://i.ibb.co/BHJvN4x/undraw-sign-up-n6im.jpg" alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form className="card-body">

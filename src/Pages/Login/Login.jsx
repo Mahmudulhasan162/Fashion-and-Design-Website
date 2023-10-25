@@ -43,7 +43,7 @@ const Login = () => {
             
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <img className="w-[400px]" src="../../../Images/undraw_authentication_re_svpt.svg" alt="" />
+      <img className="w-[400px]" src="https://i.ibb.co/ypttXxN/undraw-authentication-re-svpt.jpg" alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form className="card-body">
