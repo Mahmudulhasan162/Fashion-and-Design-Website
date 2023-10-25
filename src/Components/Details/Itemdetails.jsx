@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 const Itemdetails = () => {
     const productData= useLoaderData();
@@ -30,14 +32,13 @@ const Itemdetails = () => {
             });
 
             if (response.ok) {
-                alert("Product added to cart!");
-                history.push("/");
+                swal("Product Added to Cart", "You have successfully added product to Cart", "success");
             } else {
-                alert("Failed to add product to cart.");
+                swal("Error", "Failed to add to cart", "error");
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("An error occurred. Please try again later.");
+            swal("Error", "An Error Occupied", "error");
         } finally {
             setLoading(false);
         }
